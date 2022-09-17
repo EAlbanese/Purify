@@ -36,7 +36,7 @@
         <!-- Main -->
         <article id="main">
             <header>
-                <h2>Kontakt</h2>
+                <h2>Animationen</h2>
             </header>
             <section class="wrapper style5">
                 <div class="inner">
@@ -53,59 +53,6 @@
                                 <p>index.html</p>
                                 <pre><code>&lth1&gtHover Me&lth1&gt</code></pre>
                                 <p>stylesheet.css</p>
-                                <pre><code>								
-// die zwei unteren Klassen definieren, was passiert, wenn man mit dem Zeiger über
-den Text und was passiert, wenn man weiter/weg fährt.
-// D.h. sobald der Zeiger auf dem Text ist kommt der blaue Balken
-h1::before {  
-	transform: scaleX(0);
-	transform-origin: bottom right;
-}
-// beim wegfahren, geht er wieder zurück
-h1:hover::before {
-	transform: scaleX(1);
-	transform-origin: bottom left;
-}
-
-// hier wird der Style für den Hover bestimmt
-h1::before {
-	content: " ";
-	display: block;
-	position: absolute;
-	top: 0; right: 0; bottom: 0; left: 0;
-	inset: 0 0 0 0;
-	background: hsl(200 100% 80%);
-	z-index: -1;
-	transition: transform .3s ease;
-}
-
-// Hier wir der allgemeine Style definiert
-h1 {
-	position: relative;
-	font-size: 4rem;
-}
-
-html {
-	block-size: 100%;
-	inline-size: 100%;
-}
-
-body {
-	min-block-size: 100%;
-	min-inline-size: 100%;
-	margin: 0;
-	box-sizing: border-box;
-	display: grid;
-	place-content: left;
-	font-family: system-ui, sans-serif;
-}
-
-@media (orientation: landscape) {
-	body {
-		grid-auto-flow: column;
-	}
-}
-											</code></pre>
                             </details>
                             <hr />
                             <h4>CSS Loading Animation</h4>
@@ -115,47 +62,6 @@ body {
                                 <p>index.html</p>
                                 <pre><code>&ltspan class="loader"&gt&lt/span&gt</code></pre>
                                 <p>stylesheet.css</p>
-                                <pre><code>
-.loader {
-	width: 100px;
-	height: 100px;
-	position: relative;
-}
-// der die animation des Kreises wird bestimmt
-.loader::before, .loader::after {
-	content: '';
-	position: absolute;
-	width: inherit;
-	height: inherit;
-	border-radius: 50%;
-	mix-blend-mode: multiply;
-	animation: rotate 1s infinite
-	cubic-bezier(0.77, 0, 0.175, 1);
-}
-// Bei den unter beinen Klassen sind die Beiden Farben beschrieben
-.loader::before {
-	background-color: #fc3f9e;
-}
-.loader::after {
-	background-color: #50e8f3;
-	animation-delay: .5s;
-}
-// Mit den Keyframes wird dargestellt, wann der Kreis welche Farbe hat
-@keyframes rotate {
-	0%, 100%{
-		left: 95%;
-	}
-	25%{
-		transform: scale(.3);
-	}
-	50%{
-		left: 0;
-	}
-	75%{
-		transform: scale(1);
-	}
-}
-											</code></pre>
                             </details>
                             <hr />
                             <h4>Keyframe</h4>
@@ -164,11 +70,6 @@ body {
                             <iframe src="anim/keyframe.html" height="120" width="340" style="border:none;" title="Iframe Example"></iframe>
                             <details>
                                 <summary>Synthax</summary>
-                                <pre><code>
-@keyframes &ltbezeichner&gt {
-	[ [ from | to | &ltProzentzahl&gt ] [, from | to | &ltProzentzahl&gt ]* block ]*
-}			  
-											</code></pre>
                                 <p>
                                     <b>Bezeichner:</b> name um den Keyframe zu initialisieren<br />
                                     <b>From</b>: min 0%<br />
@@ -181,23 +82,6 @@ body {
                                 <p>index.html</p>
                                 <pre><code>&ltdiv&gt&lt/div&gt</code></pre>
                                 <p>stylesheet.css</p>
-                                <pre><code>
-div {
-	width: 100px;
-	height: 100px;
-	background-color: red;
-	// nimmt die Animation example und stellt die Dauer der Animation (4s) und die wie lange die Animaiton durchefürt wird (infinite)
-	animation: example 4s infinite; 
-}
-
-// beschreibt die Farben des Rechteckes, zu welchem Zeitpunkt
-@keyframes example {
-	0%   {background-color: red;}
-	25%  {background-color: yellow;}
-	50%  {background-color: blue;}
-	100% {background-color: green;}
-}
-											</code></pre>
                             </details>
                             <hr />
                             <h4>GIF (Graphics Interchange Format)</h4>
@@ -221,13 +105,6 @@ div {
                                 <p>index.html</p>
                                 <pre><code>&ltcanvas id="mycanavas" width="200" height="100" style="border:1px solid #d3d3d3;"&gtYour browser does not support the HTML canvas tag.&lt/canvas&gt</code></pre>
                                 <p>javascript.js</p>
-                                <pre><code>
-var c = document.getElementById("mycanavas");
-var ctx = c.getContext("2d");
-ctx.moveTo(0,0);
-ctx.lineTo(200,100);
-ctx.stroke();
-											</code></pre>
                             </details>
                             <h4>Farbverlauf</h4>
                             <canvas id="canvasFarbverlauf" width="200" height="100" style="border:1px solid #d3d3d3;">
@@ -237,17 +114,6 @@ ctx.stroke();
                                 <p>index.html</p>
                                 <pre><code>&ltcanvas id="mycanavas" width="200" height="100" style="border:1px solid #d3d3d3;"&gtYour browser does not support the HTML canvas tag.&lt/canvas&gt</code></pre>
                                 <p>javascript.js</p>
-                                <pre><code>
-var c = document.getElementById("mycanavas");
-var ctx = c.getContext("2d");
-// Create gradient
-var grd = ctx.createLinearGradient(0,0,200,0);
-grd.addColorStop(0,"red");
-grd.addColorStop(1,"white");
-// Fill with gradient
-ctx.fillStyle = grd;
-ctx.fillRect(10,10,150,80);
-											</code></pre>
                             </details>
                             <hr />
                             <h4>Scroll Animation (CSS und javascript)</h4>
@@ -256,51 +122,8 @@ ctx.fillRect(10,10,150,80);
                             <details>
                                 <summary>Code</summary>
                                 <p>index.html</p>
-                                <pre><code>
-&ltsvg width="100" height="100" viewBox="0 0 24 24"&gt
-	&ltpath d="M21,9H15V22H13V16H11V22H9V9H3V7H21M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6C10.89,6 10,5.1 10,4C10,2.89 10.89,2 12,2Z" /&gt
-&lt/svg&gt
-											</code></pre>
                                 <p>stylesheet.css</p>
-                                <pre><code>
-svg {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	margin-top: -50px;
-	margin-left: -50px;
-	
-	animation: rotate 1s linear infinite;
-	animation-play-state: paused;
-	animation-delay: calc(var(--scroll) * -1s);
-	
-	animation-iteration-count: 1;
-	animation-fill-mode: both;
-}
-	
-@keyframes rotate {
-	to {
-		transform: rotate(360deg);
-	}
-}
-	
-body {
-	min-height: 500vh;
-}
-											</code></pre>
                                 <p>javascript.js</p>
-                                <pre><code>
-window.addEventListener(
-  "scroll",
-  () => {
-    document.body.style.setProperty(
-      "--scroll",
-      window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
-    );
-  },
-  false
-);
-											</code></pre>
                             </details>
                             <hr />
                             <h4>SVG</h4>
@@ -311,9 +134,6 @@ window.addEventListener(
                             <img src="images/child.svg" alt="SVG mit img laden" width="10%">
                             <details>
                                 <summary>Code</summary>
-                                <pre><code>
-&ltimg src="images/child.svg" alt="SVG mit img laden" width="10%" &gt
-											</code></pre>
                             </details>
                             <h5 style="margin-top: 50px;">&ltsvg&gt-Tag</h5>
                             <p>Eine Andere Art wäre mittels &ltsvg&gt-Tag</p>
@@ -322,11 +142,6 @@ window.addEventListener(
 										</svg>
                             <details>
                                 <summary>Code</summary>
-                                <pre><code>
-&ltsvg width="100" height="100" viewBox="0 0 24 24"&gt
-	&ltpath d="M21,9H15V22H13V16H11V22H9V9H3V7H21M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6C10.89,6 10,5.1 10,4C10,2.89 10.89,2 12,2Z" /&gt
-&lt/svg&gt
-											</code></pre>
                             </details>
                             <hr />
                         </header>
