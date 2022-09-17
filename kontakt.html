@@ -1,0 +1,387 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Purify &mdash; Kontakt</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/animation.css" />
+</head>
+
+<body class="is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header id="header" class="alt">
+            <h1><a href="index.html">Purify</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li class="special">
+                        <a href="#menu" class="menuToggle"><span>Menu</span></a>
+                        <div id="menu">
+                            <ul>
+                                <li><a href="index.html">Startseite</a></li>
+                                <li><a href="ueberuns.html">Über uns</a></li>
+                                <li><a href="unsereseifen.html">Unsere Seifen</a></li>
+                                <li><a href="kontakt.html">Kontakt</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Main -->
+        <article id="main">
+            <header>
+                <h2>Kontakt</h2>
+            </header>
+            <section class="wrapper style5">
+                <div class="inner">
+
+                    <section>
+                        <h4>Animation</h4>
+                        <p>Auf dieser Seite sind ein paar Tutorials und Informationen zu verschiedenen Animationentypen.</p>
+                        <hr />
+                        <header>
+                            <h4>CSS Hover Animation</h4>
+                            <iframe src="anim/hoverAnimation.html" height="180" width="340" style="border:none;" title="Iframe Example"></iframe>
+                            <details>
+                                <summary>Code</summary>
+                                <p>index.html</p>
+                                <pre><code>&lth1&gtHover Me&lth1&gt</code></pre>
+                                <p>stylesheet.css</p>
+                                <pre><code>								
+// die zwei unteren Klassen definieren, was passiert, wenn man mit dem Zeiger über
+den Text und was passiert, wenn man weiter/weg fährt.
+// D.h. sobald der Zeiger auf dem Text ist kommt der blaue Balken
+h1::before {  
+	transform: scaleX(0);
+	transform-origin: bottom right;
+}
+// beim wegfahren, geht er wieder zurück
+h1:hover::before {
+	transform: scaleX(1);
+	transform-origin: bottom left;
+}
+
+// hier wird der Style für den Hover bestimmt
+h1::before {
+	content: " ";
+	display: block;
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	inset: 0 0 0 0;
+	background: hsl(200 100% 80%);
+	z-index: -1;
+	transition: transform .3s ease;
+}
+
+// Hier wir der allgemeine Style definiert
+h1 {
+	position: relative;
+	font-size: 4rem;
+}
+
+html {
+	block-size: 100%;
+	inline-size: 100%;
+}
+
+body {
+	min-block-size: 100%;
+	min-inline-size: 100%;
+	margin: 0;
+	box-sizing: border-box;
+	display: grid;
+	place-content: left;
+	font-family: system-ui, sans-serif;
+}
+
+@media (orientation: landscape) {
+	body {
+		grid-auto-flow: column;
+	}
+}
+											</code></pre>
+                            </details>
+                            <hr />
+                            <h4>CSS Loading Animation</h4>
+                            <iframe src="anim/loadingAnimation.html" height="140" width="340" style="border:none;" title="Iframe Example"></iframe>
+                            <details>
+                                <summary>Code</summary>
+                                <p>index.html</p>
+                                <pre><code>&ltspan class="loader"&gt&lt/span&gt</code></pre>
+                                <p>stylesheet.css</p>
+                                <pre><code>
+.loader {
+	width: 100px;
+	height: 100px;
+	position: relative;
+}
+// der die animation des Kreises wird bestimmt
+.loader::before, .loader::after {
+	content: '';
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	border-radius: 50%;
+	mix-blend-mode: multiply;
+	animation: rotate 1s infinite
+	cubic-bezier(0.77, 0, 0.175, 1);
+}
+// Bei den unter beinen Klassen sind die Beiden Farben beschrieben
+.loader::before {
+	background-color: #fc3f9e;
+}
+.loader::after {
+	background-color: #50e8f3;
+	animation-delay: .5s;
+}
+// Mit den Keyframes wird dargestellt, wann der Kreis welche Farbe hat
+@keyframes rotate {
+	0%, 100%{
+		left: 95%;
+	}
+	25%{
+		transform: scale(.3);
+	}
+	50%{
+		left: 0;
+	}
+	75%{
+		transform: scale(1);
+	}
+}
+											</code></pre>
+                            </details>
+                            <hr />
+                            <h4>Keyframe</h4>
+                            <p>Durch die CSS-at-Regel @keyframes kann der Autor die einzelnen Schritte einer CSS-Animationssequenz festlegen, indem er Keyframes (oder Wegpunkte) setzt, die während der Sequenz an bestimmten Punkten erreicht werden. Das ermöglicht
+                                eine spezifischere Kontrolle über die Zwischenschritte einer Animationssequenz gegenüber dem Ergebnis einem dem Browser überlassenen, automatisch berechneten Ablauf. <br /> Hier ein Beispiel dazu:</p>
+                            <iframe src="anim/keyframe.html" height="120" width="340" style="border:none;" title="Iframe Example"></iframe>
+                            <details>
+                                <summary>Synthax</summary>
+                                <pre><code>
+@keyframes &ltbezeichner&gt {
+	[ [ from | to | &ltProzentzahl&gt ] [, from | to | &ltProzentzahl&gt ]* block ]*
+}			  
+											</code></pre>
+                                <p>
+                                    <b>Bezeichner:</b> name um den Keyframe zu initialisieren<br />
+                                    <b>From</b>: min 0%<br />
+                                    <b>To</b>: Endwert max 100%<br /> Funktioniert mit den allen gängigen Browsern.
+
+                                </p>
+                            </details>
+                            <details>
+                                <summary>Code</summary>
+                                <p>index.html</p>
+                                <pre><code>&ltdiv&gt&lt/div&gt</code></pre>
+                                <p>stylesheet.css</p>
+                                <pre><code>
+div {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	// nimmt die Animation example und stellt die Dauer der Animation (4s) und die wie lange die Animaiton durchefürt wird (infinite)
+	animation: example 4s infinite; 
+}
+
+// beschreibt die Farben des Rechteckes, zu welchem Zeitpunkt
+@keyframes example {
+	0%   {background-color: red;}
+	25%  {background-color: yellow;}
+	50%  {background-color: blue;}
+	100% {background-color: green;}
+}
+											</code></pre>
+                            </details>
+                            <hr />
+                            <h4>GIF (Graphics Interchange Format)</h4>
+                            <img src="videos/ezgif.com-gif-maker.gif" alt="Computer man" style="width:40%;">
+                            <p>Blackthorn.gif</p>
+                            <p>
+                                Das GIF-Format wurde 1987 (GIF87a) von dem Unternehmen CompuServe entwickelt, um Rasterbilder in Netzwerken zu übertragen. 1989 wurde das Format modifiziert (GIF89a) und Transparenz sowie Animation hinzugefügt. GIF ist ein Format für den Austausch von
+                                Bildern. Es ist eine beliebte Format-Grafik. Es können komprimierte Daten ohne Qualitätsverlust gespeichert werden, wenn 256 Farben nicht überschritten werden.
+                            </p>
+                            <p>Im Internet gibt es meherere Converter, um ein GIF zu erstellen. In diesem Beispiel habe ich <a href="https://ezgif.com/">diesen</a> genommen. Damit habe ich eine mp4 Datie in ein gif konvertiert.</p>
+                            <hr />
+
+                            <h4>Canvas</h4>
+                            <p>Das HTML-Element &ltcanvas&gt wird verwendet, um Grafiken auf einer Webseite zu zeichnen. Die Grafik oben wurde mit &ltcanvas&gt erstellt. Sie zeigt zwei Elemente: ein Strich und ein Rechteck mit Farbverlauf
+                            </p>
+                            <h4>Strich</h4>
+                            <canvas id="canvasStrich" width="200" height="100" style="border:1px solid #d3d3d3;">
+											Your browser does not support the HTML canvas tag.</canvas>
+                            <details>
+                                <summary>Code</summary>
+                                <p>index.html</p>
+                                <pre><code>&ltcanvas id="mycanavas" width="200" height="100" style="border:1px solid #d3d3d3;"&gtYour browser does not support the HTML canvas tag.&lt/canvas&gt</code></pre>
+                                <p>javascript.js</p>
+                                <pre><code>
+var c = document.getElementById("mycanavas");
+var ctx = c.getContext("2d");
+ctx.moveTo(0,0);
+ctx.lineTo(200,100);
+ctx.stroke();
+											</code></pre>
+                            </details>
+                            <h4>Farbverlauf</h4>
+                            <canvas id="canvasFarbverlauf" width="200" height="100" style="border:1px solid #d3d3d3;">
+											Your browser does not support the HTML canvas tag.</canvas>
+                            <details>
+                                <summary>Code</summary>
+                                <p>index.html</p>
+                                <pre><code>&ltcanvas id="mycanavas" width="200" height="100" style="border:1px solid #d3d3d3;"&gtYour browser does not support the HTML canvas tag.&lt/canvas&gt</code></pre>
+                                <p>javascript.js</p>
+                                <pre><code>
+var c = document.getElementById("mycanavas");
+var ctx = c.getContext("2d");
+// Create gradient
+var grd = ctx.createLinearGradient(0,0,200,0);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"white");
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(10,10,150,80);
+											</code></pre>
+                            </details>
+                            <hr />
+                            <h4>Scroll Animation (CSS und javascript)</h4>
+                            <p></p>
+                            <iframe src="anim/scrollAnimation.html" height="180" width="340" style="border:none;" title="Iframe Example"></iframe>
+                            <details>
+                                <summary>Code</summary>
+                                <p>index.html</p>
+                                <pre><code>
+&ltsvg width="100" height="100" viewBox="0 0 24 24"&gt
+	&ltpath d="M21,9H15V22H13V16H11V22H9V9H3V7H21M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6C10.89,6 10,5.1 10,4C10,2.89 10.89,2 12,2Z" /&gt
+&lt/svg&gt
+											</code></pre>
+                                <p>stylesheet.css</p>
+                                <pre><code>
+svg {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -50px;
+	
+	animation: rotate 1s linear infinite;
+	animation-play-state: paused;
+	animation-delay: calc(var(--scroll) * -1s);
+	
+	animation-iteration-count: 1;
+	animation-fill-mode: both;
+}
+	
+@keyframes rotate {
+	to {
+		transform: rotate(360deg);
+	}
+}
+	
+body {
+	min-height: 500vh;
+}
+											</code></pre>
+                                <p>javascript.js</p>
+                                <pre><code>
+window.addEventListener(
+  "scroll",
+  () => {
+    document.body.style.setProperty(
+      "--scroll",
+      window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
+    );
+  },
+  false
+);
+											</code></pre>
+                            </details>
+                            <hr />
+                            <h4>SVG</h4>
+                            <p>SVG ist ein Bilddateiformat, das speziell für die Gestaltung zweidimensionaler Vektor- und Vektor-Raster-Grafiken für Websites entwickelt wurde. SVG unterstützt Animationen, Transparenz, Farbverläufe und ist ohne Qualitätsverlust
+                                leicht skalierbar.</p>
+                            <h5>&ltimg&gt-Tag</h5>
+                            <p>SVG kann auf mehrere Arten in HTML dargestellt werden. Eine davon ist mittels &ltimg&gt-Tag</p>
+                            <img src="images/child.svg" alt="SVG mit img laden" width="10%">
+                            <details>
+                                <summary>Code</summary>
+                                <pre><code>
+&ltimg src="images/child.svg" alt="SVG mit img laden" width="10%" &gt
+											</code></pre>
+                            </details>
+                            <h5 style="margin-top: 50px;">&ltsvg&gt-Tag</h5>
+                            <p>Eine Andere Art wäre mittels &ltsvg&gt-Tag</p>
+                            <svg width="100" height="100" viewBox="0 0 24 24">
+											<path d="M21,9H15V22H13V16H11V22H9V9H3V7H21M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6C10.89,6 10,5.1 10,4C10,2.89 10.89,2 12,2Z" />
+										</svg>
+                            <details>
+                                <summary>Code</summary>
+                                <pre><code>
+&ltsvg width="100" height="100" viewBox="0 0 24 24"&gt
+	&ltpath d="M21,9H15V22H13V16H11V22H9V9H3V7H21M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6C10.89,6 10,5.1 10,4C10,2.89 10.89,2 12,2Z" /&gt
+&lt/svg&gt
+											</code></pre>
+                            </details>
+                            <hr />
+                        </header>
+                    </section>
+                    <h4>Quellen</h4>
+                    <a href="https://css-tricks.com/books/greatest-css-tricks/scroll-animation/">Scroll Animation</a><br />
+                    <a href="https://www.w3schools.com/html/html5_canvas.asp">Canvas</a><br />
+                    <a href="https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp">Keyframes</a>
+        </article>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="icons">
+                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Alle Rechte vorbehalten</li>
+                <li><a href="Chatbot.html">Hilfe</a></li>
+                <li><a href="Impressum.html">Impressum</a></li>
+            </ul>
+        </footer>
+
+        </div>
+
+        <!-- Scripts -->
+        <script>
+            var c = document.getElementById("canvasStrich");
+            var ctx = c.getContext("2d");
+            ctx.moveTo(0, 0);
+            ctx.lineTo(200, 100);
+            ctx.stroke();
+        </script>
+        <script>
+            var c = document.getElementById("canvasFarbverlauf");
+            var ctx = c.getContext("2d");
+            // Create gradient
+            var grd = ctx.createLinearGradient(0, 0, 200, 0);
+            grd.addColorStop(0, "red");
+            grd.addColorStop(1, "white");
+            // Fill with gradient
+            ctx.fillStyle = grd;
+            ctx.fillRect(10, 10, 150, 80);
+        </script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
