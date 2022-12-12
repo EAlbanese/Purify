@@ -48,46 +48,34 @@
                             <div class="max-w-md mx-auto my-10 bg-white p-5 rounded-md shadow-sm">
                                 <div class="m-7">
                                     <form action="https://api.web3forms.com/submit" method="POST" id="form">
-                                        <input type="hidden" name="access_key"
-                                            value="0f77b491-2d9e-4aa3-a908-a600b3844ddf" />
+                                        <input type="hidden" name="access_key" value="0f77b491-2d9e-4aa3-a908-a600b3844ddf" />
                                         <input type="hidden" name="subject" value="New Submission from Web3Forms" />
                                         <input type="checkbox" name="botcheck" id="" style="display: none;" />
 
                                         <div class="mb-6">
-                                            <label for="name"
-                                                class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Vor- und
+                                            <label for="name" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Vor- und
                                                 Nachname</label>
-                                            <input type="text" name="name" id="name" placeholder="Vorname Nachname"
-                                                required
-                                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                                            <input type="text" name="name" id="name" placeholder="Vorname Nachname" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                                            />
                                         </div>
                                         <div class="mb-6">
-                                            <label for="email"
-                                                class="block mb-2 text-sm text-gray-600 dark:text-gray-400">E-Mail</label>
-                                            <input type="email" name="email" id="email" placeholder="ihre@email.com"
-                                                required
-                                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                                            <label for="email" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">E-Mail</label>
+                                            <input type="email" name="email" id="email" placeholder="ihre@email.com" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                                            />
                                         </div>
                                         <div class="mb-6">
-                                            <label for="phone"
-                                                class="text-sm text-gray-600 dark:text-gray-400">Telefonnummer</label>
-                                            <input type="text" name="phone" id="phone" placeholder="+41 76 511 63 53"
-                                                required
-                                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                                            <label for="phone" class="text-sm text-gray-600 dark:text-gray-400">Telefonnummer</label>
+                                            <input type="text" name="phone" id="phone" placeholder="+41 76 511 63 53" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                                            />
                                         </div>
                                         <div class="mb-6">
-                                            <label for="message"
-                                                class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Ihr
-                                                Anliegen</label>
+                                            <label for="message" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Ihr Anliegen</label>
 
-                                            <textarea rows="5" name="message" id="message"
-                                                placeholder="Hier schreiben.."
-                                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                                            <textarea rows="5" name="message" id="message" placeholder="Hier schreiben.." class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
                                                 required></textarea>
                                         </div>
                                         <div class="mb-6" style="padding-top: 10px;">
-                                            <button type="submit"
-                                                class="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">Kontaktieren</button>
+                                            <button type="submit" class="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">Kontaktieren</button>
                                         </div>
                                         <p class="text-base text-center text-gray-400" id="result"></p>
                                     </form>
@@ -104,12 +92,11 @@
             <ul class="icons">
                 <li><a href="https://www.instagram.com/soapspurify/" class="icon brands fa-instagram"><span
                             class="label">Instagram</span></a></li>
-                <li><a href="mailto:elia.albanese@edu.tbz.ch?subject=Anfrage an Purify&body=Sehr geehrtes Purify Team"
-                        class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                <li><a href="mailto:elia.albanese@edu.tbz.ch?subject=Anfrage an Purify&body=Sehr geehrtes Purify Team" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
             </ul>
             <ul class="copyright">
                 <li>&copy; Alle Rechte vorbehalten</li>
-                <li><a href="Impressum.html">Impressum</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
             </ul>
         </footer>
 
@@ -120,7 +107,7 @@
         const form = document.getElementById("form");
         const result = document.getElementById("result");
 
-        form.addEventListener("submit", function (e) {
+        form.addEventListener("submit", function(e) {
             const formData = new FormData(form);
             e.preventDefault();
             var object = {};
@@ -131,14 +118,14 @@
             result.innerHTML = "Bitte warten...";
 
             fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json"
-                },
-                body: json
-            })
-                .then(async (response) => {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json"
+                    },
+                    body: json
+                })
+                .then(async(response) => {
                     let json = await response.json();
                     if (response.status == 200) {
                         result.innerHTML = json.message;
@@ -155,7 +142,7 @@
                     console.log(error);
                     result.innerHTML = "Es gab einen Fehler";
                 })
-                .then(function () {
+                .then(function() {
                     form.reset();
                     setTimeout(() => {
                         result.style.display = "none";
