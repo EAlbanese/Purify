@@ -7,12 +7,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $message = $_POST["message"];
 
   // Discord Webhook-URL des Zielchannels
-  $webhookurl = "https://discord.com/api/webhooks/1086236510799548506/H4zUXTUOBch12ygE9F0h6hlkT0OIK1W7OH7iMOdaGd2ZZA6Uc4MJtuyMFi6NQPa6LGGf";
+  $webhookurl = "https://discord.com/api/webhooks/1088739495446327336/qCo5ATptBNc15kfChI5EkmwfWjiO32OlRZ3stDVKAs8B-7KmqcyZIKZ_1a77CxYYaJ3j";
 
   // JSON-Payload vorbereiten
-  $payload = json_encode([
-    "content" => "Neue Bestellung an @Purify:\n\nName: $name\nE-Mail: $email\n Telefon: $phone\nNachricht: $message"
-  ]);
+  $payload = json_encode(array(
+    "content" => "Neue Bestellung an @everyone:\n\nName: $name\nE-Mail: $email\n Telefon: $phone\nNachricht: $message"
+  ));
 
   // cURL verwenden, um den Webhook zu senden
   $ch = curl_init($webhookurl);
